@@ -1,0 +1,34 @@
+<html>
+	<head></head>
+	<body>
+		<h3>Display All Departments Details</h3>
+		<hr/> 
+        
+        <a href="/create">Create New Dept </a>
+        <br/><br/>
+        <table border="2">
+            <tr>
+                <th>Deptno</th>
+                <th>Dname</th>
+                <th>Location</th>
+            </tr>
+
+            <% 
+            for(var i = 0; i < depts.length; i++)
+            { %>
+                <tr>
+                    <td><%=depts[i].deptno%></td>
+                    <td><%=depts[i].dname%></td>
+                    <td><%=depts[i].loc%></td>
+                     <td>
+                         <a href="/edit/<%=depts[i].deptno%>">Edit</a> |
+                         <a href="/delete/<%=depts[i].deptno%>">Delete</a>
+                     </td>
+                </tr>
+            <% } %>
+
+        </table>
+        
+ 
+	</body>
+</html>
